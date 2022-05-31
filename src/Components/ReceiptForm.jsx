@@ -15,7 +15,7 @@ function ReceiptForm() {
     const [amt, setAmt] = useState("")
     const [aiw, setAiw] = useState("")
 
-    const URL = "http://localhost:8000/send"
+    const URL = process.env.React_App_BASE_URL
 
     const atw = new AmountToWords();
 
