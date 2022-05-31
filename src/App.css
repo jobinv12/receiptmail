@@ -13,8 +13,19 @@
 }
 
 .divStyle{
+    background-color: gray;
+    color: white;
     position:absolute;
     left:0;
     bottom:0;
     right:0;
+}
+
+.footerCenter{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
