@@ -6,7 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 function ReceiptForm() {
-    const [rno, setRno] = useState(1)
+
+    const [rno, setRno] = useState(1931)
     const [name, setName] = useState("")
     const [date, setDate] = useState("")
     const [email, setEmail] = useState("")
