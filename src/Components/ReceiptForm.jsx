@@ -1,9 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { AmountToWords, CountryCodes } from 'amount-in-words';
 import {Form,Label,Input,Row,Col,FormGroup,Button, Container} from 'reactstrap'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect } from 'react';
 
 
 function ReceiptForm() {
