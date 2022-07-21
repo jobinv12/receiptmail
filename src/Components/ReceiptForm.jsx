@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function ReceiptForm() {
 
-    const [rno, setRno] = useState(1939)
+    const [rno, setRno] = useState(1391)
     const [name, setName] = useState("")
     const [date, setDate] = useState("")
     const [email, setEmail] = useState("")
@@ -15,6 +15,7 @@ function ReceiptForm() {
     const [paid, setPaid] = useState("")
     const [amt, setAmt] = useState("")
     const [aiw, setAiw] = useState("")
+    const [remarks, setRemarks] = useState("")
 
     const URL = process.env.React_App_BASE_URL
 
@@ -63,7 +64,7 @@ function ReceiptForm() {
                 }
             })
             .then(()=>{
-                setRno((c)=> c+1)
+                setRno((c)=>c+1)
                 setName("")
                 setDate("")
                 setEmail("")
@@ -122,6 +123,7 @@ function ReceiptForm() {
                         <option value='English Offering'>English Offering</option>
                         <option value='Kannada Ofering'>Kannada Ofering</option>
                         <option value='Donations/Miscellaneous'>Donations/Miscellaneous</option>
+                        <option value='Loan Repayment'>Loan Repayment</option>
                     </Input>
                 </FormGroup>
             </Col>
@@ -149,6 +151,15 @@ function ReceiptForm() {
                 <FormGroup>
                     <Label for='InWords'>In Words</Label>
                     <Input onChange={(e)=>setAiw(e.target.value)} onFocus={aiwHandler} id='InWords' name='aiw' type='text' value={aiw}/>
+                </FormGroup>
+            </Col>
+        </Row>
+        <Row className='centerform'>
+            <Col md={3}>
+                <FormGroup>
+                    {type === 'Loan Repayment' &&
+                    <><Label for='remarks'>Remarks</Label><Input onChange={(e) => setRemarks(e.target.value)} id='Remarks' name='remarks' type='text' value={remarks} /></>    
+} 
                 </FormGroup>
             </Col>
         </Row>
