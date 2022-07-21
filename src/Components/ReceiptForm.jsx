@@ -27,13 +27,6 @@ function ReceiptForm() {
     }
 
 
-    function test(e){
-        e.preventDefault();
-        alert("count value is"+ rno)
-        setRno(rno + 1)
-    }
-
-
     const submitHandler = async (e) => {
         e.preventDefault();
         const data = {
