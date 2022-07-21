@@ -44,7 +44,8 @@ function ReceiptForm() {
             type: type,
             paid: paid,
             amt: amt,
-            aiw: aiw
+            aiw: aiw,
+            remarks: remarks,
         }
         
         // eslint-disable-next-line
