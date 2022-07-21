@@ -3,11 +3,13 @@ import { AmountToWords, CountryCodes } from 'amount-in-words';
 import {Form,Label,Input,Row,Col,FormGroup,Button, Container} from 'reactstrap'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
 
 
 function ReceiptForm() {
 
-    const [rno, setRno] = useState(1391)
+    const storedValue = Number(localStorage.getItem('rno'))
+    const [rno, setRno] = useState(Number.isInteger(storedValue) ? storedValue: 0)
     const [name, setName] = useState("")
     const [date, setDate] = useState("")
     const [email, setEmail] = useState("")
@@ -21,8 +23,15 @@ function ReceiptForm() {
 
     const atw = new AmountToWords();
 
-    const aiwHandler = (e) => {
+    const aiwHandler = () => {
         setAiw(atw.toWords(amt, CountryCodes.IND))
+    }
+
+
+    function test(e){
+        e.preventDefault();
+        alert("count value is"+ rno)
+        setRno(rno + 1)
     }
 
 
@@ -76,13 +85,17 @@ function ReceiptForm() {
 
     }
 
+    useEffect(()=>{
+        window.localStorage.setItem('rno',String(rno));
+    },[rno])
+
 
 
   return (
 <Container fluid>
     <h1 className='centerform'>Receipt Form</h1>
     <ToastContainer/>
-    <Form onSubmit={submitHandler}>
+    <Form onSubmit={test}>
         <Row className='centerform'>
             <Col md={3}>
                 <FormGroup>
