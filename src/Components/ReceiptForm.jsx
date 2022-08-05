@@ -74,6 +74,7 @@ function ReceiptForm() {
                 setPaid("")
                 setAmt("")
                 setAiw("")
+                setRemarks("")
             })
 
     }
@@ -88,7 +89,7 @@ function ReceiptForm() {
 <Container fluid>
     <h1 className='centerform'>Receipt Form</h1>
     <ToastContainer/>
-    <Form onSubmit={test}>
+    <Form onSubmit={submitHandler}>
         <Row className='centerform'>
             <Col md={3}>
                 <FormGroup>
